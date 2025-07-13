@@ -1,5 +1,26 @@
 # Fooocus
 
+- https://cloudstudio.net/a/28358727150886912
+
+/workspace/.vscode/preview.yml
+
+```
+autoOpen: false
+
+apps:
+  - port: 7865
+    # 直接用 conda run 进入 fooocus 环境并启动脚本
+    run: conda run -n fooocus python entry_with_update.py
+    root: .                   # 项目根目录，脚本放在这里
+    name: Fooocus-App
+    description: 启动 fooocus 环境并运行 entry_with_update.py
+    autoOpen: true
+```
+
+
+
+
+
 ### Windows
 
 You can directly download Fooocus with:
