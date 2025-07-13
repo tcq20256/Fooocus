@@ -9,12 +9,21 @@ autoOpen: false
 
 apps:
   - port: 7865
-    # 直接用 conda run 进入 fooocus 环境并启动脚本
-    run: conda run -n fooocus python entry_with_update.py
-    root: .                   # 项目根目录，脚本放在这里
+    run: |
+      # 1. 创建并切换到 fooocus 环境
+      conda env create -f environment.yaml
+      conda activate fooocus
+
+      # 2. 安装 Python 依赖
+      pip install -r requirements_versions.txt
+
+      # 3. 启动你的应用
+      python entry_with_update.py
+    root: .                   # 项目根目录
     name: Fooocus-App
-    description: 启动 fooocus 环境并运行 entry_with_update.py
+    description: 启动 fooocus 环境并运行 entry_with_update.py（包括环境创建和依赖安装）
     autoOpen: true
+
 ```
 
 
